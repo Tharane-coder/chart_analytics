@@ -8,5 +8,13 @@ export default defineConfig({
     port: 3000,
     host: true,
   },
+  preview: {
+    port: 3000,
+    host: true,
+    allowedHosts: [
+      'chart-analytics.onrender.com',
+      '.onrender.com', // Allow all Render subdomains
+    ],
+  },
 })
 
