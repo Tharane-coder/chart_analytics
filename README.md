@@ -135,11 +135,14 @@ src/
 ## Available Scripts
 
 ```bash
-# Start development server
+# Start development server (React with hot reload)
 npm run dev
 
-# Build for production
+# Build for production (React app bundled with Vite)
 npm run build
+
+# Start production server (serves the built React app)
+npm start
 
 # Preview production build
 npm run preview
@@ -147,6 +150,28 @@ npm run preview
 # Run linter
 npm run lint
 ```
+
+## Build Process
+
+This is a **React 18** application built with:
+- **Vite** as the build tool (faster than Create React App)
+- **TypeScript** for type safety
+- **React** for UI components and state management
+
+### Development
+- Run `npm run dev` to start the React development server with hot module replacement
+- The app runs on `http://localhost:3000`
+
+### Production Build
+1. Run `npm run build` to create an optimized production build
+   - TypeScript is compiled to JavaScript
+   - React components are bundled and optimized
+   - Assets are minified and optimized
+   - Output goes to the `dist/` folder
+
+2. Run `npm start` to serve the production build
+   - Serves the optimized React application
+   - Runs on `http://localhost:3000`
 
 ## Key Features Implementation
 
