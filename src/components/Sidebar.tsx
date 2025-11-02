@@ -18,14 +18,13 @@ import {
 
 interface SidebarProps {
   open: boolean
-  onClose: () => void
   selectedChart: string | null
   onSelectChart: (chart: string | null) => void
 }
 
 const drawerWidth = 280
 
-const Sidebar: React.FC<SidebarProps> = ({ open, onClose, selectedChart, onSelectChart }) => {
+const Sidebar: React.FC<SidebarProps> = ({ open, selectedChart, onSelectChart }) => {
   const theme = useTheme()
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: <DashboardIcon /> },

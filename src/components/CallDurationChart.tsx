@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { Area, AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import { Button, CircularProgress, Box } from '@mui/material'
+import { Button, CircularProgress } from '@mui/material'
 import { supabase } from '../lib/supabase'
 import { CallDurationDataPoint } from '../types/charts'
 import EmailModal from './EmailModal'
@@ -43,7 +43,7 @@ const CallDurationChart: React.FC = () => {
     setUserEmail(email)
     
     // Check if user has previous custom values
-    const { data: existingData, error } = await supabase
+    const { data: existingData } = await supabase
       .from('user_custom_values')
       .select('chart_data')
       .eq('email', email)

@@ -80,7 +80,6 @@ function App() {
       <Box sx={{ display: 'flex', minHeight: '100vh', backgroundColor: muiTheme.palette.background.default }}>
         <Sidebar
           open={sidebarOpen}
-          onClose={() => setSidebarOpen(false)}
           selectedChart={selectedChart}
           onSelectChart={setSelectedChart}
         />

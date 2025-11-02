@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts'
-import { Button, CircularProgress, Box } from '@mui/material'
+import { Button, CircularProgress } from '@mui/material'
 import { supabase } from '../lib/supabase'
 import { SadPathData } from '../types/charts'
 import EmailModal from './EmailModal'
@@ -77,7 +77,7 @@ const SadPathChart: React.FC = () => {
     setUserEmail(email)
     
     // Check if user has previous custom values
-    const { data: existingData, error } = await supabase
+    const { data: existingData } = await supabase
       .from('user_custom_values')
       .select('chart_data')
       .eq('email', email)
@@ -182,7 +182,7 @@ const SadPathChart: React.FC = () => {
             dataKey="value"
             label={({ name, value }) => `${name}: ${value}%`}
           >
-            {innerData.map((entry, index) => (
+            {innerData.map((_, index) => (
               <Cell key={`inner-cell-${index}`} fill={COLORS.inner[index % COLORS.inner.length]} />
             ))}
           </Pie>
